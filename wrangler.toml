@@ -3,7 +3,16 @@ compatibility_date = "2024-12-01"
 
 # 本地开发环境变量（仅用于测试）
 [vars]
-TARGET_DOMAIN = "example.com"
+# 默认目标域名（当没有匹配的规则时使用）
+DEFAULT_TARGET = "tiy.ai"
+
+# 多域名转发配置示例：
+# 格式：FROM_<源域名> = "<目标域名>"
+# 注意：源域名中的点号(.)和连字符(-)需要替换为下划线(_)
+# 
+# FROM_b_com = "bbb.com"           # b.com -> bbb.com
+# FROM_www_c_com = "c.com"         # www.c.com -> c.com
+# FROM_my_site_org = "newsite.com" # my-site.org -> newsite.com
 
 # 生产环境变量请在 Cloudflare Dashboard 中配置：
-# Pages > 项目设置 > 环境变量 > 添加 TARGET_DOMAIN
+# Pages > 项目设置 > 环境变量
